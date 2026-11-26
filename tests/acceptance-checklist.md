@@ -1,0 +1,11 @@
+# Acceptance Checklist — v1
+- [ ] New event uses canonical brief and missing details TBD.
+- [ ] Event example does not leak invented dates into public copy.
+- [ ] Copywriter produces concise Colombian Spanish.
+- [ ] E-card revision changes only requested element.
+- [ ] Flat PNG is never represented as fully editable Canva design.
+- [ ] Wrong weekday/date is caught and blocks QA.
+- [ ] Changed logistics invalidate dependent public assets.
+- [ ] User approval of drafts does not trigger publication.
+- [ ] No unverified GitHub or Canva success claim.
+- [ ] Minimal roles and context are selected.
