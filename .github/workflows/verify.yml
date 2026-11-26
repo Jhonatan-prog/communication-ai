@@ -1,0 +1,26 @@
+name: Verification checks
+on:
+  push:
+    branches: [main]
+  pull_request:
+jobs:
+  verifier-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install verification dependencies
+        run: python -m pip install -r requirements-verification.txt
+      - name: Run verification unit tests
+        run: python -m unittest discover -s tests -v
+      - name: Validate event PNG cutouts when manifests exist
+        shell: bash
+        run: |
+          set -euo pipefail
+          mapfile -d '' manifests < <(find events -name 'assets.json' -path '*/qa/*' -print0 2>/dev/null || true)
+          for manifest in "${manifests[@]}"; do
+            echo "Verifying $manifest"
+            python tools/verify_layers.py --manifest "$manifest" --report "${RUNNER_TEMP}/$(basename "$(dirname "$manifest")")-layers.json"
+          done

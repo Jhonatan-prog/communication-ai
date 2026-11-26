@@ -16,3 +16,6 @@ python tools/verify_canva.py --design-json path/to/canva.json --expect path/to/e
 `canva.json` must contain **structured** output from Canva `read_design` with an open transaction. It does not authenticate to Canva or trigger a remote edit. For object-only verification, a machine cannot prove that a semitransparent leaf silhouette contains no unwanted pixels from a different leaf — the human/visual pass remains mandatory.
 
 This is a runnable local/CI component, **not an already-deployed n8n workflow**.
+
+## GitHub Actions
+`.github/workflows/verify.yml` runs Python unit tests on pushes to main and pull requests. It also looks for committed `events/**/qa/assets.json` manifests to validate their referenced PNG cutouts. **Canva designs do not automatically become GitHub assets**; call the Canva validator separately with structured design JSON, then run visual review. Do not interpret a passing GitHub Action as publication approval.

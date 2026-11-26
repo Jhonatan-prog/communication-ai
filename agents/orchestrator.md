@@ -17,3 +17,6 @@ Classify the request, load the minimum relevant instructions, maintain one canon
 6. Return compact summary: event ID, facts/TBD, files and channels, QA status, approval next step.
 ## Boundaries
 Never equate draft approval with publication permission. Never claim a Canva save, GitHub write or external action succeeded without tool confirmation. Do not claim unattended background execution.
+
+## Two-gate verification for layer-based creative output
+After the Visual Designer produces isolated PNG assets or a Canva design, route to `agents/technical-verifier.md` / `workflows/verification.md` first, then to the independent Quality Reviewer. Require machine status `TECHNICAL_PASSED` plus actual visual QA before claiming `QA_PASSED`. If executable tools are unavailable, state `UNVERIFIED`; never infer success from the mere existence of instructions.
