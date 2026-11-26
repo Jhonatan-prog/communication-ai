@@ -1,26 +1,36 @@
-# Layer Rebuild Specification
+# Layer Reconstruction / Isolation Specification (v1.2)
+
 Status: DRAFT
-Source image:
-Destination:
-Original dimensions:
+Source image / dimensions: TBD
+Target editor: Canva
+Approved visual reference: TBD
 
-| ID | Bounding box | Component | Source method | Expected editor element | Editability |
-|---|---|---|---|---|---|
-| L01 | TBD | Background | rebuild | shape | editable |
+## Object-by-object inventory
+| ID | Subject only | Original bbox (x,y,w,h) | Output file | Mask method | Isolated? | Edges QA | Native/raster | Anchor / z-order |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| leaf-01 | ONE leaf + stem | TBD | assets/isolated/leaf-01.png | alpha mask | TBD | TBD | raster image | TBD |
+| bird-01 | bird only | TBD | assets/isolated/bird-01.png | alpha mask | TBD | TBD | raster image | TBD |
 
-## Crops / regenerated zones
-TBD
+## Edited / regenerated subregions
+Record only subject-local repair. Never regenerate context around target unless rebuilding the separate background layer.
 
-## Typeface, colors, stacking order
-TBD
+## Asset QA checklist
+- [ ] True RGBA + transparent alpha outside subject
+- [ ] No neighboring objects/text/background in the same PNG
+- [ ] No opaque rectangle/checkerboard baked into pixels
+- [ ] Natural silhouette, no accidental clipping or stray islands
+- [ ] No fringing/halos; clean on white/dark/checkerboard backgrounds
+- [ ] Frame tightly bounds subject with transparent safe margin
+- [ ] Can move/hide independently in Canva without leftover scenery
 
-## Verification
-- Page import confirmed: TBD
-- Editable text confirmed: TBD
-- Native shapes confirmed: TBD
-- Rasters: TBD
-- Visual fidelity: TBD
-- Issues and changes: TBD
+## Canva composition
+| Element | Kind (native text/shape, isolated image, photo) | Position | Reusable? | Verified editable? |
+| --- | --- | --- | --- | --- |
+| Title | native text | TBD | Yes | TBD |
 
-## QA decision
-DRAFT / QA_FAILED / QA_PASSED, pending user approval.
+## Comparison to approved design
+Preserved: TBD
+Changed intentionally: TBD
+Differences/uncertainty: TBD
+QA result: QA_FAILED / QA_PASSED
+Publication authorization: NOT GRANTED
