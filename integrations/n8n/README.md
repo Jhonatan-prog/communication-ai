@@ -10,3 +10,6 @@ Webhook/form trigger -> validate input against event schema -> create/update can
 - If confirmed logistics change, invalidate affected assets and trigger re-QA.
 - For Canva, use approved editable templates and verify generated design IDs.
 - Respect channel policies, privacy and consent.
+
+## Future verification node
+When automating, add deterministic asset checks (`tools/verify_layers.py`) and structured Canva checks (`tools/verify_canva.py`) before the Quality Reviewer / human approval gate. Script failures must stop workflow publication and create repair tasks. This repo does not deploy n8n automatically.

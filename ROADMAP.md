@@ -9,3 +9,6 @@ Implement event intake -> normalized brief -> role-specific generation -> valida
 Connect supported scheduling and messaging providers, implement audit log, explicit publish authorization, retry/idempotency and post-event review. Never bypass approvals.
 ## Exit tests
 No invented logistics; reproducible templates; QA catches incorrect weekday; edits preserve design; no external side effects without permission.
+
+## Added in v1.1 — Local runnable verification
+`agents/technical-verifier.md` and Python validators check PNG and Canva structures locally. Seven unittest scenarios cover valid cutouts and key failures. Human visual review remains required; future n8n execution is pending.

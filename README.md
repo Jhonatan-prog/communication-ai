@@ -11,3 +11,6 @@ Human-approved multi-agent communication framework for community and youth event
 Agents are logical roles, not automatically running services. Canva editing, GitHub writes and outbound publishing require supported integrations and appropriate authorization. Event logistics that are not confirmed remain `TBD`.
 
 See `ROADMAP.md`, `integrations/n8n/README.md`, and `examples/routing-cases.md` for future integration.
+
+## Technical verification
+Use `README_VERIFICATION.md` for machine checks and visual review. Install Pillow with `pip install -r requirements-verification.txt` and run `python -m unittest discover -s tests -v`. Layered Canva reconstruction requires both verification gates.

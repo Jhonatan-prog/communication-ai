@@ -23,3 +23,5 @@ Any failed mandatory cutout check => QA_FAILED even when the poster looks accept
 ## Output
 QA_PASSED / QA_FAILED, file/asset-level findings, required remediation, editability truth table and approval next step.
 Changes to confirmed logistics invalidate affected public assets until repaired/reapproved.
+## Two-gate acceptance
+Read the Technical Verifier JSON findings for each cutout and structured Canva design. Any FAIL or UNVERIFIED required check blocks QA_PASSED. TECHNICAL_PASSED is necessary but not sufficient: visually inspect object identity, halos, source fidelity and real independent editability. Direct failed components back to Visual Designer for minimal repairs and retest.

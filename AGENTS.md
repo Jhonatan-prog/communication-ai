@@ -25,3 +25,8 @@ DRAFT -> QA_FAILED or QA_PASSED -> APPROVED -> PUBLISHED.
 Approval of a draft is NOT permission to publish.
 ## Context efficiency
 Use fewest roles; retrieve only relevant repository files; reuse event briefs; do not fork unrelated agents.
+
+## Two-gate verification — required for layered creative assets
+- Run deterministic Technical Verifier (`agents/technical-verifier.md`, `workflows/verification.md`) **before** the independent Quality Reviewer.
+- Machine tests do not establish semantic cleanliness or full editability; technical pass is not final `QA_PASSED`.
+- Failed verification blocks approval until affected assets are repaired and retested.

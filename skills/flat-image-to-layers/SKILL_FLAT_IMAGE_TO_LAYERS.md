@@ -50,3 +50,6 @@ Fail any mandatory item -> `QA_FAILED`; repair/re-segment before claiming the as
 - Adobe: https://www.adobe.com/products/photoshop/cut-out-an-image.html (selection + non-destructive layer masks and refining)
 - PHLEARN: https://phlearn.com/tutorial/isolate-subjects-and-clean-up-edges-in-photoshop/ (video/guide about edge halos)
 - Canva: https://www.canva.com/features/background-remover/ (clean cutout and transparent PNG)
+
+## Required technical verifier (v1.1 integration)
+After exporting isolated assets, invoke `agents/technical-verifier.md` and `workflows/verification.md`. No Canva assembly or final QA_PASSED on failing cutouts. Generate diagnostic previews and keep structured reports. Technical passing cannot prove "one correct leaf" or clean compositing; Quality Reviewer must visually confirm every asset.

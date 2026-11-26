@@ -26,3 +26,5 @@ A leaf PNG holds the leaf only, never the surrounding building, bird, other leav
 An intentional photo rectangle may remain a replaceable photo layer; distinguish photo frames from isolated object PNGs. An isolated object remains raster-editable only as a whole (move/crop/replace), not vector-editable internally.
 
 No "fully editable" claims if imported design is only a single flat image or failed masks. No invented logistics or unauthorized publishing.
+## Verification handoff (required)
+After generating isolated cutouts, save an asset manifest and invoke `agents/technical-verifier.md`. Repair any deterministic failure before Canva assembly. After import, provide structured Canva elements to the verifier, then hand all results to Quality Reviewer. Do not claim that a composite looks correct is proof its cutouts are clean.
