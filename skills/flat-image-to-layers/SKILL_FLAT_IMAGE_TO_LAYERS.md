@@ -53,3 +53,12 @@ Fail any mandatory item -> `QA_FAILED`; repair/re-segment before claiming the as
 
 ## Required technical verifier (v1.1 integration)
 After exporting isolated assets, invoke `agents/technical-verifier.md` and `workflows/verification.md`. No Canva assembly or final QA_PASSED on failing cutouts. Generate diagnostic previews and keep structured reports. Technical passing cannot prove "one correct leaf" or clean compositing; Quality Reviewer must visually confirm every asset.
+
+## v1.3 — Exact-source lock, completeness and occlusion checks
+- **Lock the exact input image:** record original filename, pixel dimensions and SHA256; never silently substitute an earlier AI-generated variation with similar appearance. If multiple originals exist, use the latest user-supplied reference.
+- **Completeness test before assembly:** compare the extracted object's silhouette against the original at 100% and 200%. A bird layer must preserve *entire crest, beak, head, belly, both visible feet/claws, wings, and full tail including feather tips*. Leaf layers must retain complete tips, stems and margins.
+- **Dual comparisons:** compare (1) each isolated PNG against its corresponding source-region and (2) the fully recomposed canvas against the full reference. A composite that looks acceptable does not certify its underlying masks.
+- **No duplicated objects in the backdrop:** if an isolated bird or leaf is also baked into a venue photo, remove or reconstruct that specific occluded source region in the lower layer. Moving the overlay must not expose a second copy. Hidden pixels cannot be recovered exactly; mark any reconstruction as synthetic.
+- **Exact vs editable is a trade-off:** with only a flattened image, invisible overlapping pixels cannot be recovered perfectly. Never claim pixel-perfect reproduction when hidden pixels or fonts were approximated.
+- **Mechanical pass ≠ visual pass:** machine transparency tests may pass while cutouts retain foreign scenery. Final Quality Reviewer must fail object isolation if any unrelated pixels remain, even when Canva reports separate image layers.
+- **Canva proof:** open the structured Canva design, confirm text/shapes and image layers, then modify one date and move one decorative object in an unsaved transaction; verify both; discard changes unless user approved saving the edit.

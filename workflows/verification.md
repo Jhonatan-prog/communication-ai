@@ -34,3 +34,6 @@ Machine results are `FAIL` or `TECHNICAL_PASSED`, not `QA_PASSED`. Quality Revie
 ```
 
 Thresholds are examples; derive expected minimums from actual design specification. Photos marked `photo` bypass alpha checks by design.
+
+## v1.3 reference fidelity
+Before Technical Verifier, lock the exact input source file (dimensions + SHA256) and inventory mandatory object features. Technical Verifier checks alpha integrity and native Canva layers; visual reviewer additionally checks completeness and nonduplication against the original. Use a temporary Canva move/edit transaction and discard it. Publish status only after all required layers and event facts pass; incomplete object reconstruction remains QA_FAILED.

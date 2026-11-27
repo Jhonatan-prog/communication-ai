@@ -28,3 +28,6 @@ An intentional photo rectangle may remain a replaceable photo layer; distinguish
 No "fully editable" claims if imported design is only a single flat image or failed masks. No invented logistics or unauthorized publishing.
 ## Verification handoff (required)
 After generating isolated cutouts, save an asset manifest and invoke `agents/technical-verifier.md`. Repair any deterministic failure before Canva assembly. After import, provide structured Canva elements to the verifier, then hand all results to Quality Reviewer. Do not claim that a composite looks correct is proof its cutouts are clean.
+
+## Source fidelity and lossless-region rule (v1.3)
+For revisions to an approved poster, bind work to the exact latest uploaded source by dimensions and hash. Do not use an older generated poster, even if visually similar. Before rebuilding an animal or object, trace its full silhouette and check all tips/extremities against the source image. Keep unchanged visible artwork at original pixel alignment where feasible. When replacing underlying hidden regions, document synthesized/inpainted details; do not claim exact source recovery. Produce a source-vs-reconstruction comparison image plus per-layer evidence. A successful Canva import is not visual QA pass.

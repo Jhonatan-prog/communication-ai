@@ -25,3 +25,11 @@ Opaque rectangular source crop, unrelated pixels, accidental clipping, nontransp
 
 ## Notes
 Alpha tests are necessary but not sufficient: a non-transparent unrelated leaf inside alpha silhouette still fails semantic inspection. Human/image-model visual inspection remains mandatory.
+
+## v1.3 source-fidelity regression
+- [ ] Latest user-provided source image SHA/dimensions recorded; variants cannot silently substitute.
+- [ ] Entire bird head, crest, beak, wing, claws/feet and yellow tail tips present.
+- [ ] Isolated bird moved in Canva during temporary transaction; no duplicate underneath.
+- [ ] Date text changed independently and test transaction discarded.
+- [ ] Source-vs-export side-by-side checked at original pixels, not only an overall thumbnail.
+- [ ] Any masked scenery residue or partially reconstructed botanical detail blocks final QA_PASSED even when PNG alpha tests pass.

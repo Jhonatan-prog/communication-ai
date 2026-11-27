@@ -25,3 +25,10 @@ QA_PASSED / QA_FAILED, file/asset-level findings, required remediation, editabil
 Changes to confirmed logistics invalidate affected public assets until repaired/reapproved.
 ## Two-gate acceptance
 Read the Technical Verifier JSON findings for each cutout and structured Canva design. Any FAIL or UNVERIFIED required check blocks QA_PASSED. TECHNICAL_PASSED is necessary but not sufficient: visually inspect object identity, halos, source fidelity and real independent editability. Direct failed components back to Visual Designer for minimal repairs and retest.
+
+## v1.3 regression review — source lock and full silhouette
+- Confirm source fingerprint/dimensions correspond to the user's **current** upload, not an earlier look-alike.
+- For birds/animals, check complete wings, tail tips, head, beak, legs/feet and natural boundary, not just percentage alpha or cropped bounding box.
+- For botanical elements, check isolated tips, stems, no scenery patch and no duplication in scene backing when moving.
+- Independently compare the Canva draft to the uploaded original at full dimensions.
+- Keep TECHNICAL_PASSED separate from QA_PASSED. A faded/blurred original element or a leftover green wedge counts as QA_FAILED until corrected.
