@@ -1,11 +1,12 @@
 # Technical + Visual Verification (v1)
 
-The Communication AI Visual Designer must run **two gates** for layered e-cards:
+Communication AI uses two verification gates for layered e-cards **after the artifact is produced**, initiated by the Communication Orchestrator rather than by GitHub repository events.
 
-1. **Technical Verifier**: run the Python scripts in `tools/` on isolated PNG cutouts and structured Canva design JSON. These detect missing transparency, crops reaching edges, near-opaque rectangles, missing native text/shape elements and other measurable issues.
-2. **Quality Reviewer**: inspect the diagnostic previews and Canva page for semantic contamination, accurate design fidelity, clean cutout edges and correctness of event facts. Only this reviewer may report `QA_PASSED` after both gates succeed.
+1. **Technical Verifier:** Run Python scripts in `tools/` against isolated PNG layers and structured Canva design JSON. Check actual transparency, inset margins, suspect rectangular crops, and native text/shape/image elements.
+2. **Quality Reviewer:** Inspect diagnostic previews and the Canva design for subject-only isolation, fidelity, clean edges, event accuracy and true modification readiness. Only this reviewer can assign `QA_PASSED` after both gates succeed.
 
-## Install and run
+## Run when producing an output
+
 ```bash
 python -m pip install -r requirements-verification.txt
 python -m unittest discover -s tests -v
@@ -13,9 +14,6 @@ python tools/verify_layers.py --manifest path/to/assets.json --report path/to/la
 python tools/verify_canva.py --design-json path/to/canva.json --expect path/to/expectations.json --report path/to/canva-report.json
 ```
 
-`canva.json` must contain **structured** output from Canva `read_design` with an open transaction. It does not authenticate to Canva or trigger a remote edit. For object-only verification, a machine cannot prove that a semitransparent leaf silhouette contains no unwanted pixels from a different leaf — the human/visual pass remains mandatory.
+`canva.json` must contain **structured** output from Canva `read_design` with an open editing transaction; text-only output is not sufficient. The scripts do not authenticate to Canva or perform remote changes. An alpha mask alone cannot prove that an isolated object contains no contamination; the independent visual review remains mandatory.
 
-This is a runnable local/CI component, **not an already-deployed n8n workflow**.
-
-## GitHub Actions
-`.github/workflows/verify.yml` runs Python unit tests on pushes to main and pull requests. It also looks for committed `events/**/qa/assets.json` manifests to validate their referenced PNG cutouts. **Canva designs do not automatically become GitHub assets**; call the Canva validator separately with structured design JSON, then run visual review. Do not interpret a passing GitHub Action as publication approval.
+GitHub stores the agent instructions, workflow descriptions, scripts and tests, but **does not execute QA**. ChatGPT or another capable orchestrator runs relevant checks at artifact-production time where supported. When execution or Canva inspection is unavailable, report `UNVERIFIED` instead of claiming a passing result. Future n8n orchestration remains optional and is not deployed.
